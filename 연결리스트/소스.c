@@ -22,13 +22,15 @@ void insert(int item)
 	node->next = cur;
 
 }
-void removeat()
+int removeat()
 {
 	Node* erase = head->next;
 	head->next = erase->next;
+	int out = erase->data;
 	Node* next = erase->next;
 	next->prev = head;
 	free(erase);
+	return out;
 }
 void show()
 {
